@@ -17,4 +17,22 @@ class ConverterTest {
 		assertNotEquals(null, result);
 	}
 	
+	
+	@DisplayName("Debería retornar \"dos\"")
+	@Test
+	void dos() {
+		String result = Converter.numeroATexto(2);
+		
+		// Asegurar que retorne "dos"
+		assertEquals("dos", result);
+	}
+	
+	@DisplayName("Debería retornar \"cuatro\"")
+	@Test
+	void cuatro() {
+		String result = Converter.numeroATexto(4);
+		
+		// Asegurar que retorne "cuatro"
+		assertEquals("cuatro", result);
+	}
 }

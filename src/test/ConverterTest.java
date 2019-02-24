@@ -3,6 +3,8 @@ package test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import main.Converter;
 
@@ -16,23 +18,11 @@ class ConverterTest {
 		// Asegurar que no retorne null
 		assertNotEquals(null, result);
 	}
-	
-	
-	@DisplayName("Debería retornar \"dos\"")
-	@Test
-	void dos() {
-		String result = Converter.numeroATexto(2);
 		
-		// Asegurar que retorne "dos"
-		assertEquals("dos", result);
-	}
-	
-	@DisplayName("Debería retornar \"cuatro\"")
-	@Test
-	void cuatro() {
-		String result = Converter.numeroATexto(4);
-		
-		// Asegurar que retorne "cuatro"
-		assertEquals("cuatro", result);
+	@DisplayName("Debería convertir un numero entero a su representación en texto")
+	@ParameterizedTest(name = "dado = {0}, esperado = \"{1}\"")
+	@CsvSource({ "1, uno", "2, dos", "3, tres", "4, cuatro", "5, cinco" })
+	void testConverter(int numero, String textoEsperado) throws Exception {
+		assertEquals(textoEsperado, Converter.numeroATexto(numero));
 	}
 }

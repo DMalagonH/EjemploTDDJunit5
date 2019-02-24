@@ -30,8 +30,8 @@ class ConverterTest {
 	@DisplayName("Deberia retornar null para números mayores a 10")
 	@Test
 	void error() {
+		assertEquals(null, Converter.numeroATexto(-1));
 		assertEquals(null, Converter.numeroATexto(11));
-		assertEquals(null, Converter.numeroATexto(20));
 		assertEquals(null, Converter.numeroATexto(100));
 	}
 }

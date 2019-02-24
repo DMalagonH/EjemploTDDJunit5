@@ -26,7 +26,8 @@ class ConverterTest {
 		assertEquals(textoEsperado, Converter.numeroATexto(numero));
 	}
 	
-	@DisplayName("No deberia retornar valores mayores a 10")
+
+	@DisplayName("Deberia retornar null para números mayores a 10")
 	@Test
 	void error() {
 		assertEquals(null, Converter.numeroATexto(11));

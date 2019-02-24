@@ -25,4 +25,12 @@ class ConverterTest {
 	void testConverter(int numero, String textoEsperado) throws Exception {
 		assertEquals(textoEsperado, Converter.numeroATexto(numero));
 	}
+	
+	@DisplayName("No deberia retornar valores mayores a 10")
+	@Test
+	void error() {
+		assertEquals(null, Converter.numeroATexto(11));
+		assertEquals(null, Converter.numeroATexto(20));
+		assertEquals(null, Converter.numeroATexto(100));
+	}
 }

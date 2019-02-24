@@ -8,13 +8,13 @@ import main.Converter;
 
 class ConverterTest {
 
-	@DisplayName("No deberia retornar una cadena vacia")
+	@DisplayName("No deberia retornar null")
 	@Test
 	void test() {
 		String result = Converter.numeroATexto(1);
 		
-		// No retorne una cadena vacia
-		assertNotEquals("", result);
+		// Asegurar que no retorne null
+		assertNotEquals(null, result);
 	}
-
+	
 }

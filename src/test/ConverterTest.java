@@ -27,7 +27,7 @@ class ConverterTest {
 	}
 	
 
-	@DisplayName("Deberia retornar null para números mayores a 10")
+	@DisplayName("Deberia retornar null para números negativos y mayores a 10")
 	@Test
 	void error() {
 		assertEquals(null, Converter.numeroATexto(-1));

@@ -21,7 +21,7 @@ class ConverterTest {
 		
 	@DisplayName("Debería convertir un numero entero a su representación en texto")
 	@ParameterizedTest(name = "dado = {0}, esperado = \"{1}\"")
-	@CsvSource({ "1, uno", "2, dos", "3, tres", "4, cuatro", "5, cinco" })
+	@CsvSource({ "0, cero", "1, uno", "2, dos", "3, tres", "4, cuatro", "5, cinco", "6, seis", "7, siete", "8, ocho", "9, nueve", "10, diez" })
 	void testConverter(int numero, String textoEsperado) throws Exception {
 		assertEquals(textoEsperado, Converter.numeroATexto(numero));
 	}
